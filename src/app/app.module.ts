@@ -8,7 +8,6 @@ import { MainComponent } from './main/main.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent,
   ],
   imports: [
     BrowserModule,
