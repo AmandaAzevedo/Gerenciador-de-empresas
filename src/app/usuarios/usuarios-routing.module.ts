@@ -7,22 +7,27 @@ import { UsuarioVerComponent } from './usuario-ver/usuario-ver.component';
 import { UsuarioEditarComponent } from './usuario-editar/usuario-editar.component';
 
 const routes: Routes = [
-    {
-        path: '',
-        component: UsuariosListComponent,
-    },
-    {
-        path: "create",
-        component: UsuarioCreateComponent,
-    },
-    {
-        path: "ver/:id",
-        component: UsuarioVerComponent,
-    },
-    {
-        path: "editar/:id",
-        component: UsuarioEditarComponent,
-    }
+  {
+    path: '',
+    redirectTo: 'list',
+    pathMatch: 'full',
+  },
+  {
+      path: 'list',
+      component: UsuariosListComponent,
+  },
+  {
+      path: "create",
+      component: UsuarioCreateComponent,
+  },
+  {
+      path: "ver/:id",
+      component: UsuarioVerComponent,
+  },
+  {
+      path: "editar/:id",
+      component: UsuarioEditarComponent,
+  }
 ]
 
 @NgModule({
