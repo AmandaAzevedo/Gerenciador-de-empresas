@@ -5,8 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
     {
         path: '',
-        redirectTo: 'usuarios',
-        pathMatch: 'full',
+        loadChildren: './main/main.module#MainModule',
     },
     {
         path: 'usuarios',

@@ -1,13 +1,38 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" [routerLink]="['/']"  routerLInkActive="active">{{title}}</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Gerenciador de Empresas</a>
+
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
+        aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+
+
+    <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/']">Inicio</a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="dropdownSite" data-toggle="dropdown">Usuários</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" [routerLink]="['usuarios/create']" href="#">Cadastrar Usuário</a>
+                    <a class="dropdown-item" [routerLink]="['usuarios/']" href="#">Listar Usuários</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownSite" data-toggle="dropdown">Empresas</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" [routerLink]="['empresa/criar']" href="#">Cadastrar Empresa</a>
+                    <a class="dropdown-item" [routerLink]="['empresa/']" href="#">Listar Empresas</a>
+                </div>
+            </li>
+
         </ul>
     </div>
+
 </nav>
 
 <router-outlet></router-outlet>
