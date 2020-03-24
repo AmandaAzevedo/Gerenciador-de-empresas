@@ -1,5 +1,5 @@
 <div class="container">
-    
+
     <div class="my-3 float-right"><a class="btn btn-primary" routerLink="/usuarios/create">CREATE</a></div>
 
     <div *ngIf="loading else ListUsers">Loading...</div>
@@ -24,8 +24,8 @@
                     <td> {{ user.email }} </td>
                     <td>
                         <button (click)="delete(user.id)" href="#"> Deletar </button>
-                        <button [routerLink]="['ver', user.id]" href="#"> Ver </button>
-                        <button [routerLink]="['editar', user.id]" href="#"> Editar </button>
+                        <button [routerLink]="['/usuarios/ver', user.id]" href="#"> Ver </button>
+                        <button [routerLink]="['/usuarios/editar', user.id]" href="#"> Editar </button>
                     </td>
                 </tr>
             </tbody>

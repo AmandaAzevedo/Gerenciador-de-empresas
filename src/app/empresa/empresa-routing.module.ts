@@ -8,6 +8,11 @@ import { EmpresaVerComponent } from './empresa-ver/empresa-ver.component';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'list',
+    pathMatch: 'full',
+  },
+  {
+    path: 'list',
     component: EmpresaListarComponent,
   },
   {
