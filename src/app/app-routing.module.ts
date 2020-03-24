@@ -4,8 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
     {
-        path: '',
-        redirectTo: 'usuarios',
+        path: 'main',
+        redirectTo: './main/main.module#MainModule',
         pathMatch: 'full',
     },
     {
