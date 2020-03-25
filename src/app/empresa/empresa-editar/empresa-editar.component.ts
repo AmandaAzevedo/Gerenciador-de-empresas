@@ -4,6 +4,7 @@ import { EmpresaMockService } from '../service/empresa.mock.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { EmpresaDTO } from '../models/empresaDTO.entity';
 import { UsuarioDTO } from 'src/app/usuarios/models/usuarioDTO.entity';
+import { UsuarioMockService } from 'src/app/usuarios/service/usuariomock.service';
 
 @Component({
   selector: 'app-empresa-editar',
@@ -13,10 +14,15 @@ import { UsuarioDTO } from 'src/app/usuarios/models/usuarioDTO.entity';
 export class EmpresaEditarComponent implements OnInit {
   private formGroup: FormGroup;
   public empresa: EmpresaDTO;
-  constructor(private service: EmpresaMockService, private formBuilder: FormBuilder, private route: Router, private router: ActivatedRoute) { }
+  public usuarios: Array<UsuarioDTO>;
+
+  constructor(private service: EmpresaMockService, private formBuilder: FormBuilder, private route: Router, private router: ActivatedRoute, private usuariosService:UsuarioMockService) { }
 
   ngOnInit() {
     let id: number = +this.router.snapshot.params["id"];
+    this.usuariosService.list().subscribe(result => {
+      this.usuarios = result;
+    })
     this.service.getById(id).subscribe(empresa => {
       this.empresa = empresa;
       this.generateForm();
@@ -35,6 +41,7 @@ export class EmpresaEditarComponent implements OnInit {
         razaoSocial: [this.empresa.razaoSocial, [Validators.required]],
         missao: [this.empresa.missao, [Validators.required]],
         visao: [this.empresa.visao, [Validators.required]],
+        funcionarios: [this.empresa.funcionarios, [Validators.required]],
       }
     );
   }

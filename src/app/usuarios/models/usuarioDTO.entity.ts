@@ -8,4 +8,5 @@ export class UsuarioDTO {
         this.name = name;
         this.email = email;
     }
+
 }

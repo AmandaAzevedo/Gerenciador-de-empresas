@@ -20,7 +20,6 @@ export class EmpresaCriarComponent implements OnInit {
   ngOnInit() {
     this.generateForm();
     this.usuariosService.list().subscribe(result => {
-      console.log(result);
       this.usuarios = result;
     })
   }
