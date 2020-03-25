@@ -15,14 +15,15 @@ export class UsuarioMockService implements IUsuarioService {
 
     lastId: number = 2;
 
-    list(): Observable<any> {
-        return new Observable<any>(
+    list(): Observable<Array<UsuarioDTO>> {
+        return new Observable<Array<UsuarioDTO>>(
             (obs) => {
                 obs.next(this.usuarios);
                 obs.complete();
             }
         );
     }
+
     getById(id: number): Observable<UsuarioDTO> {
         let usuarioDTO: Observable<UsuarioDTO> = null;
         console.log(this.usuarios);
@@ -32,10 +33,11 @@ export class UsuarioMockService implements IUsuarioService {
                     obs.next(element);
                     obs.complete();
                 });
-            }            
+            }
         });
         return usuarioDTO;
     }
+
     insert(usuario: UsuarioDTO): Observable<UsuarioDTO> {
         usuario.id = ++this.lastId;
         this.usuarios.push(usuario);
@@ -46,6 +48,7 @@ export class UsuarioMockService implements IUsuarioService {
             }
         );
     }
+
     delete(id: number): Observable<any> {
         const aux: UsuarioDTO[] = []
         this.usuarios.forEach((user) => {
@@ -53,7 +56,7 @@ export class UsuarioMockService implements IUsuarioService {
                 aux.push(user);
             }
         });
-        this.usuarios = aux;        
+        this.usuarios = aux;
         return new Observable<any>(
             (obs) => {
                 obs.next(true);
