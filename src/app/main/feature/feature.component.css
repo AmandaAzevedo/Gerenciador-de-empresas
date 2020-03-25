@@ -7,6 +7,8 @@
 
 .features p {
   font-weight: 400;
+  text-align: center;
+  color: #ffffff;
 }
 
 .features h2 {
@@ -32,4 +34,9 @@
 
   .features{
     background-color: #009faf;
+  }
+
+  #icon-users{
+    width: 0px;
+
   }
