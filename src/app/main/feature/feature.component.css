@@ -1,0 +1,38 @@
+.features {
+  overflow: hidden;
+  padding: 150px 0px 150px 0px;
+  min-height: 400px;
+  color: black;
+}
+
+.features p {
+  font-weight: 400;
+  text-align: center;
+  color: #ffffff;
+}
+
+.features h2 {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-top: 50px;
+  text-align: center;
+}
+
+
+.features .circle {
+  box-sizing: border-box;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 33px;
+  width: 250px;
+  height: 250px;
+  border: 2px solid #ffffff;
+  border-radius: 100%;
+  text-align: center;
+}
+
+  .features{
+    background-color: #009faf;
+  }
+
