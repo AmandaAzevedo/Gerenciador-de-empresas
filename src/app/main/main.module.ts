@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './main.component';
 import { MainRoutingModule } from './main-routing.module';
+import { FeatureComponent } from './feature/feature.component';
 
 
 
 @NgModule({
-  declarations: [MainComponent],
+  declarations: [MainComponent, FeatureComponent],
   imports: [
     CommonModule,
     MainRoutingModule,
