@@ -52,18 +52,18 @@ export class EmpresaEditarComponent implements OnInit {
     }
 
     const empresa: EmpresaDTO = new EmpresaDTO(
-        null,
-        this.formGroup.controls["nomeFantasia"].value,
+        this.empresa.id,
         this.formGroup.controls["cnpj"].value,
+        this.formGroup.controls["nomeFantasia"].value,
         this.formGroup.controls["razaoSocial"].value,
         this.formGroup.controls["missao"].value,
         this.formGroup.controls["visao"].value,
-        new Array<UsuarioDTO>()
+        this.formGroup.controls["funcionarios"].value,
     );
 
-    this.service.insert(empresa).subscribe(
+    this.service.update(empresa).subscribe(
         result => {
-            this.route.navigate(['/empresa']);
+            this.route.navigate(['/empresas']);
         }, err => {
 
         }
