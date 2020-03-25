@@ -48,12 +48,12 @@ export class EmpresaCriarComponent implements OnInit {
 
     const empresa: EmpresaDTO = new EmpresaDTO(
         null,
-        this.formGroup.controls["nomeFantasia"].value,
         this.formGroup.controls["cnpj"].value,
+        this.formGroup.controls["nomeFantasia"].value,
         this.formGroup.controls["razaoSocial"].value,
         this.formGroup.controls["missao"].value,
         this.formGroup.controls["visao"].value,
-        this.formGroup.controls["funcionarios"].value
+        this.formGroup.controls["funcionarios"].value,
     );
 
     this.service.insert(empresa).subscribe(
