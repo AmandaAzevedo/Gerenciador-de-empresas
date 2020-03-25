@@ -4,11 +4,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './main.component';
 import { MainRoutingModule } from './main-routing.module';
 import { FeatureComponent } from './feature/feature.component';
+import { FeatureRodapeComponent } from './feature-rodape/feature-rodape.component';
 
 
 
 @NgModule({
-  declarations: [MainComponent, FeatureComponent],
+  declarations: [MainComponent, FeatureComponent, FeatureRodapeComponent],
   imports: [
     CommonModule,
     MainRoutingModule,

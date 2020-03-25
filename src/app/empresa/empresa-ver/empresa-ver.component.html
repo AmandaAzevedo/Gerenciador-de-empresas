@@ -1,25 +1,43 @@
 <div class="container">
-  <h2 class="text-center">Ver empresa</h2>
+
   <div class="form-row" *ngIf="empresa else carregando">
     <div class="form-group col-12">
-      <label><strong>Nome fantasia: </strong>{{empresa.nomeFantasia}}</label>
-    </div>
-    <div class="form-group col-12">
-      <label><strong>CNPJ: </strong>{{empresa.cnpj}}</label>
-    </div>
-    <div class="form-group col-12">
-      <label><strong>Razão social: </strong>{{empresa.razaoSocial}}</label>
-    </div>
-    <div class="form-group col-12">
-      <label><strong>Missão: </strong>{{empresa.missao}}</label>
-    </div>
-    <div class="form-group col-12">
-      <label><strong>Visão: </strong>{{empresa.visao}}</label>
+      <h2 class="text-center"><label id="nome-fantasia" class="text-center">Empresa {{empresa.nomeFantasia}}</label>
+      </h2>
+
     </div>
 
+    <div class="row">
+      
+      <div class="col w=100">
+        <img src="assets/img/download.webp" class="img-fluid" alt="Responsive image" id="image-ver">
+      </div>
+
+      <div class="col w=100">
+
+        <div class="form-group col-12">
+        <label class="text-center"><strong>Nome Fantasia: </strong>{{empresa.nomeFantasia}}</label>
+      </div>
+        <div class="form-group col-12">
+          <label><strong>CNPJ: </strong>{{empresa.cnpj}}</label>
+        </div>
+        <div class="form-group col-12">
+          <label><strong>Razão social: </strong>{{empresa.razaoSocial}}</label>
+        </div>
+        <div class="form-group col-12">
+          <label><strong>Missão: </strong>{{empresa.missao}}</label>
+        </div>
+        <div class="form-group col-12">
+          <label><strong>Visão: </strong>{{empresa.visao}}</label>
+        </div>
+      </div>
+    </div>
+
+
     <label><strong>Funcionários: </strong></label>
-    <table class="table table-bordered table-hover table-striped">
-      <thead class="thead-dark">
+    <table class="table table-striped table-light">
+     
+      <thead class="thead">
         <tr>
           <th>ID</th>
           <th>Name</th>
