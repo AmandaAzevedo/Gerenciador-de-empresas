@@ -7,6 +7,7 @@ import { EmpresaEditarComponent } from './empresa-editar/empresa-editar.componen
 import { EmpresaListarComponent } from './empresa-listar/empresa-listar.component';
 import { EmpresaMockService } from './service/empresa.mock.service';
 import { EmpresaVerComponent } from './empresa-ver/empresa-ver.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 
@@ -16,7 +17,8 @@ import { EmpresaVerComponent } from './empresa-ver/empresa-ver.component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    EmpresaRoutingModule
+    EmpresaRoutingModule,
+    NgSelectModule
   ],
   providers: [
     {
