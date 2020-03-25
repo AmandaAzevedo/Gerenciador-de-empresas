@@ -5,6 +5,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { EmpresaDTO } from '../models/empresaDTO.entity';
 import { UsuarioDTO } from 'src/app/usuarios/models/usuarioDTO.entity';
 import { UsuarioMockService } from 'src/app/usuarios/service/usuariomock.service';
+import { ValidateBrService } from 'angular-validate-br';
 
 @Component({
   selector: 'app-empresa-editar',
@@ -15,8 +16,9 @@ export class EmpresaEditarComponent implements OnInit {
   private formGroup: FormGroup;
   public empresa: EmpresaDTO;
   public usuarios: Array<UsuarioDTO>;
+  private submitted: boolean = false;
 
-  constructor(private service: EmpresaMockService, private formBuilder: FormBuilder, private route: Router, private router: ActivatedRoute, private usuariosService:UsuarioMockService) { }
+  constructor(private service: EmpresaMockService, private formBuilder: FormBuilder, private route: Router, private router: ActivatedRoute, private usuariosService:UsuarioMockService, private validateBrService: ValidateBrService) { }
 
   ngOnInit() {
     let id: number = +this.router.snapshot.params["id"];
@@ -37,7 +39,7 @@ export class EmpresaEditarComponent implements OnInit {
     this.formGroup = this.formBuilder.group(
       {
         nomeFantasia: [this.empresa.nomeFantasia, [Validators.required]],
-        cnpj: [this.empresa.cnpj, [Validators.required]],
+        cnpj: [this.empresa.cnpj, [Validators.required, this.validateBrService.cnpj]],
         razaoSocial: [this.empresa.razaoSocial, [Validators.required]],
         missao: [this.empresa.missao, [Validators.required]],
         visao: [this.empresa.visao, [Validators.required]],
@@ -47,6 +49,7 @@ export class EmpresaEditarComponent implements OnInit {
   }
 
   onSubmit() {
+    this.submitted = true;
     if(this.formGroup.invalid) {
       return;
     }
@@ -71,6 +74,7 @@ export class EmpresaEditarComponent implements OnInit {
   }
 
   onReset() {
+    this.submitted = false;
     this.route.navigate(['/empresas']);
   }
 }

@@ -13,10 +13,10 @@
       </div>
       <div class="form-group col-12">
         <label><strong>CNPJ</strong></label>
-        <input type="text" formControlName="cnpj" class="form-control"
+        <input type="text" ValCnpj formControlName="cnpj" class="form-control"
           [ngClass]="{ 'is-invalid': submitted && form.cnpj.errors }" />
         <div *ngIf="submitted && form.cnpj.errors" class="invalid-feedback">
-          <div *ngIf="form.cnpj.errors.required">cnpj required</div>
+          <div *ngIf="form.cnpj.errors.required">Cnpj required</div>
         </div>
       </div>
       <div class="form-group col-12">
@@ -48,6 +48,9 @@
         <ng-select ngSelectMat [items]="usuarios" [multiple]="true" [hideSelected]="true" [clearable]="false"
           bindLabel="name" formControlName="funcionarios" appendTo="body" placeholder="Funcionários" required>
         </ng-select>
+        <div *ngIf="submitted && form.funcionarios.errors" class="invalid-feedback">
+          <div *ngIf="form.funcionarios.errors.required">Funcionarios required</div>
+        </div>
       </div>
     </div>
     <div class="text-center">

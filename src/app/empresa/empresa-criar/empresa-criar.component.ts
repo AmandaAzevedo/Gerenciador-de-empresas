@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { EmpresaDTO } from '../models/empresaDTO.entity';
 import { UsuarioDTO } from 'src/app/usuarios/models/usuarioDTO.entity';
 import { EmpresaMockService } from '../service/empresa.mock.service';
+import { ValidateBrService } from 'angular-validate-br';
 
 @Component({
   selector: 'app-empresa-criar',
@@ -14,8 +15,9 @@ import { EmpresaMockService } from '../service/empresa.mock.service';
 export class EmpresaCriarComponent implements OnInit {
   private formGroup: FormGroup;
   public usuarios: Array<UsuarioDTO>;
+  private submitted: boolean = false;
 
-  constructor(private service: EmpresaMockService, private formBuilder: FormBuilder, private route: Router, private usuariosService:UsuarioMockService) { }
+  constructor(private service: EmpresaMockService, private formBuilder: FormBuilder, private route: Router, private usuariosService:UsuarioMockService, private validateBrService: ValidateBrService) { }
 
   ngOnInit() {
     this.generateForm();
@@ -32,7 +34,7 @@ export class EmpresaCriarComponent implements OnInit {
     this.formGroup = this.formBuilder.group(
       {
         nomeFantasia: ['', [Validators.required]],
-        cnpj: ['', [Validators.required]],
+        cnpj: ['', [Validators.required, this.validateBrService.cnpj]],
         razaoSocial: ['', [Validators.required]],
         missao: ['', [Validators.required]],
         visao: ['', [Validators.required]],
@@ -42,6 +44,7 @@ export class EmpresaCriarComponent implements OnInit {
   }
 
   onSubmit() {
+    this.submitted = true;
     if(this.formGroup.invalid) {
       return;
     }
@@ -66,6 +69,7 @@ export class EmpresaCriarComponent implements OnInit {
   }
 
   onReset() {
+    this.submitted = false;
     this.route.navigate(['/empresas']);
   }
 
