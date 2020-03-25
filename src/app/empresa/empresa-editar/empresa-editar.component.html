@@ -1,9 +1,9 @@
 <div class="container">
-  <h2 class="text-center">Editar empresa</h2>
+  <h2 class="text-center">Editar Dados da Empresa</h2>
   <form class="form" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
     <div class="form-row">
       <div class="form-group col-12">
-        <label><strong>Nome fantasia</strong></label>
+        <label><strong>Nome Fantasia</strong></label>
         <input type="text" formControlName="nomeFantasia" class="form-control"
           [ngClass]="{ 'is-invalid': submitted && form.nomeFantasia.errors }" />
         <div *ngIf="submitted && form.nomeFantasia.errors" class="invalid-feedback">
@@ -12,11 +12,11 @@
       </div>
       <div class="form-group col-12">
         <label><strong>CNPJ</strong></label>
-        <input type="text" formControlName="cnpj" class="form-control"
+        <input type="text" ValCnpj formControlName="cnpj" class="form-control"
           [ngClass]="{ 'is-invalid': submitted && form.cnpj.errors }" />
-        <div *ngIf="submitted && form.cnpj.errors" class="invalid-feedback">
-          <div *ngIf="form.cnpj.errors.required">cnpj required</div>
-        </div>
+          <div *ngIf="submitted && form.cnpj.errors" class="invalid-feedback">
+            <div *ngIf="form.cnpj.errors.cnpjvalidator && (cnpj.dirty || cnpj.touched)">cnpj required</div>
+          </div>
       </div>
       <div class="form-group col-12">
         <label><strong>Razão Social</strong></label>
@@ -47,10 +47,13 @@
         <ng-select ngSelectMat [items]="usuarios" [multiple]="true" [hideSelected]="true" [clearable]="false"
           bindLabel="name" formControlName="funcionarios" appendTo="body" placeholder="Funcionários" required>
         </ng-select>
+        <div *ngIf="submitted && form.funcionarios.errors" class="invalid-feedback">
+          <div *ngIf="form.funcionarios.errors.required">Funcionarios required</div>
+        </div>
       </div>
     </div>
     <div class="text-center">
-      <button class="btn btn-primary mr-1">Adicionar</button>
+      <button class="btn btn-primary mr-1">Atualizar</button>
       <button *ngIf="!isEditing" class="btn btn-secondary" type="reset" (click)="onReset()">Cancelar</button>
     </div>
 
