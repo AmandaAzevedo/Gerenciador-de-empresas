@@ -43,7 +43,9 @@
         </div>
       </div>
     </div>
-
+    <ng-select ngSelectMat [items]="usuarios" [multiple]="true" [hideSelected]="true" [clearable]="false"
+      bindLabel="funcionarios" formControlName="funcionarios" appendTo="body" placeholder="Funcionários" required>
+    </ng-select>
     <div class="text-center">
       <button class="btn btn-primary mr-1">Adicionar</button>
       <button *ngIf="!isEditing" class="btn btn-secondary" type="reset" (click)="onReset()">Resetar</button>

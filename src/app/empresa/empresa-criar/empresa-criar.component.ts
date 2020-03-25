@@ -13,11 +13,16 @@ import { EmpresaMockService } from '../service/empresa.mock.service';
 })
 export class EmpresaCriarComponent implements OnInit {
   private formGroup: FormGroup;
+  public usuarios: Array<UsuarioDTO>;
 
-  constructor(private service: EmpresaMockService, private formBuilder: FormBuilder, private route: Router) { }
+  constructor(private service: EmpresaMockService, private formBuilder: FormBuilder, private route: Router, private usuariosService:UsuarioMockService) { }
 
   ngOnInit() {
     this.generateForm();
+    this.usuariosService.list().subscribe(result => {
+      console.log(result);
+      this.usuarios = result;
+    })
   }
 
   get form() {
@@ -32,6 +37,7 @@ export class EmpresaCriarComponent implements OnInit {
         razaoSocial: ['', [Validators.required]],
         missao: ['', [Validators.required]],
         visao: ['', [Validators.required]],
+        funcionarios: ['', [Validators.required]],
       }
     );
   }
@@ -48,7 +54,7 @@ export class EmpresaCriarComponent implements OnInit {
         this.formGroup.controls["razaoSocial"].value,
         this.formGroup.controls["missao"].value,
         this.formGroup.controls["visao"].value,
-        new Array<UsuarioDTO>()
+        this.formGroup.controls["funcionarios"].value
     );
 
     this.service.insert(empresa).subscribe(
