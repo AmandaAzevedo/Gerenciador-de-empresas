@@ -4,56 +4,50 @@
     <div class="form-group col-12">
       <h2 class="text-center"><label id="nome-fantasia" class="text-center">Empresa {{empresa.nomeFantasia}}</label>
       </h2>
-
     </div>
-
-    <div class="row">
-
-      <div class="col w=100">
-        <img src="assets/img/download.webp" class="img-fluid" alt="Responsive image" id="image-ver">
+    <div class="col-6">
+      <img src="assets/img/download.webp" class="img-fluid" alt="Responsive image" id="image-ver"
+        style="margin-left: 25%;">
+    </div>
+    <div class="col-6">
+      <div class="form-group">
+        <label class="text-center"><strong>Nome Fantasia: </strong>{{empresa.nomeFantasia}}</label>
       </div>
-
-      <div class="col w=100">
-
-        <div class="form-group col-12">
-          <label class="text-center"><strong>Nome Fantasia: </strong>{{empresa.nomeFantasia}}</label>
-        </div>
-        <div class="form-group col-12">
-          <label><strong>CNPJ: </strong>{{empresa.cnpj}}</label>
-        </div>
-        <div class="form-group col-12">
-          <label><strong>Razão social: </strong>{{empresa.razaoSocial}}</label>
-        </div>
-        <div class="form-group col-12">
-          <label><strong>Missão: </strong>{{empresa.missao}}</label>
-        </div>
-        <div class="form-group col-12">
-          <label><strong>Visão: </strong>{{empresa.visao}}</label>
-        </div>
+      <div class="form-group">
+        <label><strong>CNPJ: </strong>{{empresa.cnpj}}</label>
+      </div>
+      <div class="form-group">
+        <label><strong>Razão social: </strong>{{empresa.razaoSocial}}</label>
+      </div>
+      <div class="form-group">
+        <label><strong>Missão: </strong>{{empresa.missao}}</label>
+      </div>
+      <div class="form-group">
+        <label><strong>Visão: </strong>{{empresa.visao}}</label>
       </div>
     </div>
 
-
-    <label><strong>Funcionários: </strong></label>
-    <table class="table table-striped table-light">
-
-      <thead class="thead">
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Email</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr *ngFor="let funcionario of empresa.funcionarios">
-          <td> {{ funcionario.id }} </td>
-          <td> {{ funcionario.name }} </td>
-          <td> {{ funcionario.email }} </td>
-
-        </tr>
-      </tbody>
-    </table>
+    <div class="col-12">
+      <div class="form-group" style="margin-top: 16px;">
+        <label><strong>Funcionários: </strong></label>
+      </div>
+      <table class="table table-striped table-light">
+        <thead class="thead">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let funcionario of empresa.funcionarios">
+            <td> {{ funcionario.id }} </td>
+            <td> {{ funcionario.name }} </td>
+            <td> {{ funcionario.email }} </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
   </div>
   <ng-template #carregando>Carregando...</ng-template>
