@@ -8,4 +8,7 @@ h2{
   font-weight: 150;  
 }
 
-
+.container-fluid {
+  padding-left: 25px;
+  padding-right: 25px;
+}

@@ -8,7 +8,8 @@
 
     <h2 class="text-center">Empresas Cadastradas
 
-      <button type="button" class="btn btn-outline-info float-right" routerLink="/empresas/create">Adicionar</button>
+      <button type="button" class="btn btn-outline-info float-right" routerLink="/empresas/create"> <i class="fa fa-plus" style="margin-right: 3%; color:009faf;"></i> 
+        <i class="fa fa-building" style="margin-right: 5%; color:009faf;"></i>Adcionar</button>
 
     </h2>
 
@@ -34,9 +35,9 @@
           <td> {{ empresa.visao }} </td>
           <td>
             
-            <button type="button" class="btn btn-outline-info" [routerLink]="['/empresas/ver', empresa.id]" href="#"> Ver </button>
-            <button type="button" class="btn btn-outline-primary" [routerLink]="['/empresas/editar', empresa.id]" href="#"> Editar </button>
-            <button type="button" class="btn btn-outline-danger" (click)="delete(empresa.id)" href="#"> Deletar </button>
+            <button type="button" class="btn btn-outline-info" [routerLink]="['/empresas/ver', empresa.id]" href="#"> <i class="fa fa-eye"></i> </button>
+            <button type="button" class="btn btn-outline-primary" [routerLink]="['/empresas/editar', empresa.id]" href="#"> <i class="fa fa-edit"></i> </button>
+            <button type="button" class="btn btn-outline-danger" (click)="delete(empresa.id)" href="#"> <i class="fa fa-trash"></i></button>
           </td>
         </tr>
       </tbody>

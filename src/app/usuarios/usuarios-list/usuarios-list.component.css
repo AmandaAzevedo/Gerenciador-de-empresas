@@ -1,12 +1,15 @@
 button{
-  margin-right: 3px;
+  margin-right: 5px;
+  margin-top: 5px;
 }
 
 .container-fluid {
-  padding-left: 0px;
-  padding-right: 0px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 h2{
-  margin: 16px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  font-weight: 150;  
 }
