@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #009FAF;">
 
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" [routerLink]="['']" href="#">
         <h3 class="text-white">Gerenciador de Empresas</h3>
     </a>
 
@@ -19,20 +19,12 @@
                 <a class="nav-link" id="dropdownSite" [routerLink]="['/']">Inicio</a>
             </li>
 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="dropdownSite" data-toggle="dropdown">Usuários</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" [routerLink]="['usuarios/create']" href="#">Cadastrar Usuário</a>
-                    <a class="dropdown-item" [routerLink]="['usuarios/']" href="#">Listar Usuários</a>
-                </div>
+            <li class="nav-item">
+                <a class="nav-link" id="dropdownSite" [routerLink]="['usuarios/']">Usuários</a>
             </li>
 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdownSite" data-toggle="dropdown">Empresas</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" [routerLink]="['empresas/create']" href="#">Cadastrar Empresa</a>
-                    <a class="dropdown-item" [routerLink]="['empresas/']" href="#">Listar Empresas</a>
-                </div>
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="dropdownSite" [routerLink]="['empresas/']">Empresas</a>
             </li>
         </ul>
     </div>
