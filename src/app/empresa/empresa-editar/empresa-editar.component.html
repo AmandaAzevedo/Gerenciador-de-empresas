@@ -1,9 +1,9 @@
 <div class="container">
-  <h2 class="text-center">Editar empresa</h2>
+  <h2 class="text-center">Editar Dados da Empresa</h2>
   <form class="form" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
     <div class="form-row">
       <div class="form-group col-12">
-        <label><strong>Nome fantasia</strong></label>
+        <label><strong>Nome Fantasia</strong></label>
         <input type="text" formControlName="nomeFantasia" class="form-control"
           [ngClass]="{ 'is-invalid': submitted && form.nomeFantasia.errors }" />
         <div *ngIf="submitted && form.nomeFantasia.errors" class="invalid-feedback">
@@ -53,7 +53,7 @@
       </div>
     </div>
     <div class="text-center">
-      <button class="btn btn-primary mr-1">Adicionar</button>
+      <button class="btn btn-primary mr-1">Atualizar</button>
       <button *ngIf="!isEditing" class="btn btn-secondary" type="reset" (click)="onReset()">Cancelar</button>
     </div>
 

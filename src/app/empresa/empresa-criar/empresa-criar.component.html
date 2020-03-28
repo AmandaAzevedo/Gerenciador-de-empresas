@@ -1,10 +1,9 @@
 <div class="container">
-  <h2 class="text-center">Cadastrar nova empresa</h2>
+  <h2 class="text-center">Editar Dados da Empresa</h2>
   <form class="form" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-
     <div class="form-row">
       <div class="form-group col-12">
-        <label><strong>Nome fantasia</strong></label>
+        <label><strong>Nome Fantasia</strong></label>
         <input type="text" formControlName="nomeFantasia" class="form-control"
           [ngClass]="{ 'is-invalid': submitted && form.nomeFantasia.errors }" />
         <div *ngIf="submitted && form.nomeFantasia.errors" class="invalid-feedback">
@@ -16,7 +15,7 @@
         <input type="text" ValCnpj formControlName="cnpj" class="form-control"
           [ngClass]="{ 'is-invalid': submitted && form.cnpj.errors }" />
         <div *ngIf="submitted && form.cnpj.errors" class="invalid-feedback">
-          <div *ngIf="form.cnpj.errors.required">Cnpj required</div>
+          <div *ngIf="form.cnpj.errors.cnpjvalidator && (cnpj.dirty || cnpj.touched)">cnpj required</div>
         </div>
       </div>
       <div class="form-group col-12">
@@ -56,7 +55,11 @@
     <div class="text-center">
       <button class="btn btn-primary mr-1">Adicionar</button>
       <button *ngIf="!isEditing" class="btn btn-secondary" type="reset" (click)="onReset()">Resetar</button>
+      <button type="button" class="btn btn-danger" [routerLink]="['../list']" href="#"> Cancelar </button>
     </div>
 
   </form>
 </div>
+
+
+
