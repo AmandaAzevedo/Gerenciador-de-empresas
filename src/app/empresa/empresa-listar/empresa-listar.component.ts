@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { EmpresaDTO } from '../models/empresaDTO.entity';
 import { EmpresaMockService } from '../service/empresa.mock.service';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-empresa-listar',
@@ -11,6 +13,10 @@ export class EmpresaListarComponent implements OnInit {
 
   loading: boolean = true;
   empresas: Array<EmpresaDTO>;
+
+  displayedColumns: string[] = ['id', 'cnpj', 'nomeFantasia', 'razaoSocial', 'missao', 'visao','acoes'];
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  dataSource = null;
 
   constructor(private service: EmpresaMockService) { }
 
@@ -24,6 +30,7 @@ export class EmpresaListarComponent implements OnInit {
       res => {
         this.loading = false;
         this.empresas = res;
+        this.dataSource = new MatTableDataSource<EmpresaDTO>(this.empresas);
       }, err => {
         console.log(err);
       }
