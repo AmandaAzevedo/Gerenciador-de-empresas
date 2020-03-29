@@ -1,18 +1,26 @@
 #nome-fantasia{
     font-size: 30px;
-    text-align: center 
+    text-align: center
 }
 
 h2{
     margin-top: 25px;
     margin-bottom: 15px;
-    font-weight: 150;  
+    font-weight: 150;
 }
 img{
     border-radius: 50%;
     width: 250px;
     height: 250px;
-} 
+}
 table{
     margin-top: 20px;
 }
+.mat-form-field {
+    width: 100%;
+}
+
+button{
+    margin-right: 10px;
+}
+

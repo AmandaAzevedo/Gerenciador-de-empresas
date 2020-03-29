@@ -1,81 +1,81 @@
 <div class="container">
   <h2 class="text-center">Editar empresa</h2>
   <div class="jumbotron" style="background-color: rgba(1, 158, 175, 0.164);">
-  <form class="form" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-    <div class="container">
+    <form class="form" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+      <div class="container">
 
-      <div class="row">
+        <div class="row">
 
-        <div class="col">
-          <div class="form-group col-12">
-            <mat-form-field>
-              <input matInput type="text" placeholder="Nome Fantasia" formControlName="nomeFantasia" id="nomeFantasia"
-                required>
-              <mat-error *ngIf="hasError('nomeFantasia', 'required')"> Nome Fantasiais is required </mat-error>
-            </mat-form-field>
+          <div class="col">
+            <div class="form-group col-12">
+              <mat-form-field>
+                <input matInput type="text" placeholder="Nome Fantasia" formControlName="nomeFantasia" id="nomeFantasia"
+                  required>
+                <mat-error *ngIf="hasError('nomeFantasia', 'required')"> Nome Fantasiais is required </mat-error>
+              </mat-form-field>
+            </div>
           </div>
+
+          <div class="col">
+            <div class="form-group col-12">
+              <mat-form-field>
+                <mat-label>CNPJ</mat-label>
+                <input matInput type="text" placeholder="00.000.000/0000-00" formControlName="cnpj" id="cnpj" required>
+                <mat-error *ngIf="hasError('cnpj', 'required')"> CNPJ is required </mat-error>
+                <mat-error *ngIf="hasError('cnpj', 'cnpjvalidator')"> CNPJ is invalid </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="form-group col-12">
+              <mat-form-field>
+                <mat-label>Razão Social</mat-label>
+                <input matInput type="text" placeholder="" formControlName="razaoSocial" id="razaoSocial" required>
+                <mat-error *ngIf="hasError('razaoSocial', 'required')"> Razao Social is required </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+
         </div>
 
-        <div class="col">
-          <div class="form-group col-12">
-            <mat-form-field>
-              <mat-label>CNPJ</mat-label>
-              <input matInput type="text" placeholder="00.000.000/0000-00" formControlName="cnpj" id="cnpj" required>
-              <mat-error *ngIf="hasError('cnpj', 'required')"> CNPJ is required </mat-error>
-              <mat-error *ngIf="hasError('cnpj', 'cnpjvalidator')"> CNPJ is invalid </mat-error>
-            </mat-form-field>
+        <div class="row">
+
+          <div class="col">
+            <div class="form-group col-12">
+              <mat-form-field>
+                <mat-label>Missão</mat-label>
+                <textarea rows="5" matInput placeholder="" formControlName="missao" required></textarea>
+                <mat-error *ngIf="hasError('missao', 'required')"> Missão is required </mat-error>
+              </mat-form-field>
+            </div>
           </div>
+
+          <div class="col">
+            <div class="form-group col-12">
+              <mat-form-field>
+                <mat-label>Visão</mat-label>
+                <textarea rows="5" matInput placeholder="" formControlName="visao" required></textarea>
+                <mat-error *ngIf="hasError('visao', 'required')"> Visão is required </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+
         </div>
 
-        <div class="col">
-          <div class="form-group col-12">
-            <mat-form-field>
-              <mat-label>Razão Social</mat-label>
-              <input matInput type="text" placeholder="" formControlName="razaoSocial" id="razaoSocial" required>
-              <mat-error *ngIf="hasError('razaoSocial', 'required')"> Razao Social is required </mat-error>
-            </mat-form-field>
-          </div>
+        <div class="form-group col-12">
+          <mat-label style="color: rgba(0,0,0,.54);">Funcionários *</mat-label>
+          <ng-select ngSelectMat [items]="usuarios" [multiple]="true" [hideSelected]="true" [clearable]="false"
+            bindLabel="name" formControlName="funcionarios" appendTo="body" placeholder="" required>
+          </ng-select>
+          <mat-error *ngIf="hasError('funcionarios', 'required')"> Funcionários is required </mat-error>
         </div>
-
       </div>
 
-      <div class="row">
-
-        <div class="col">
-          <div class="form-group col-12">
-            <mat-form-field>
-              <mat-label>Missão</mat-label>
-              <textarea rows="5" matInput placeholder="" formControlName="missao" required></textarea>
-              <mat-error *ngIf="hasError('missao', 'required')"> Missão is required </mat-error>
-            </mat-form-field>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="form-group col-12">
-            <mat-form-field>
-              <mat-label>Visão</mat-label>
-              <textarea rows="5" matInput placeholder="" formControlName="visao" required></textarea>
-              <mat-error *ngIf="hasError('visao', 'required')"> Visão is required </mat-error>
-            </mat-form-field>
-          </div>
-        </div>
-
+      <div class="text-center">
+        <button class="btn btn-outline-primary mr-1" [disabled]="formGroup.invalid">Salvar</button>
+        <button type="button" class="btn btn-outline-danger" [routerLink]="['../../list']"> Cancelar </button>
       </div>
-
-      <div class="form-group col-12">
-        <mat-label style="color: rgba(0,0,0,.54);">Funcionários *</mat-label>
-        <ng-select ngSelectMat [items]="usuarios" [multiple]="true" [hideSelected]="true" [clearable]="false"
-          bindLabel="name" formControlName="funcionarios" appendTo="body" placeholder="" required>
-        </ng-select>
-        <mat-error *ngIf="hasError('funcionarios', 'required')"> Funcionários is required </mat-error>
-      </div>
-    </div>
-
-    <div class="text-center">
-      <button class="btn btn-outline-primary mr-1" [disabled]="formGroup.invalid">Salvar</button>
-      <button type="button" class="btn btn-outline-danger" [routerLink]="['../list']"> Cancelar </button>
-    </div>
-  </form>
-</div>
+    </form>
+  </div>
 </div>

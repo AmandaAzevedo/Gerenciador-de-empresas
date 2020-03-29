@@ -17,7 +17,7 @@ export class EmpresaCriarComponent implements OnInit {
   public usuarios: Array<UsuarioDTO>;
   private submitted: boolean = false;
 
-  constructor(private service: EmpresaMockService, private formBuilder: FormBuilder, private route: Router, private usuariosService:UsuarioMockService, private validateBrService: ValidateBrService) { }
+  constructor(private service: EmpresaMockService, private formBuilder: FormBuilder, private route: Router, private usuariosService: UsuarioMockService, private validateBrService: ValidateBrService) { }
 
   ngOnInit() {
     this.generateForm();
@@ -45,26 +45,26 @@ export class EmpresaCriarComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    if(this.formGroup.invalid) {
+    if (this.formGroup.invalid) {
       return;
     }
 
     const empresa: EmpresaDTO = new EmpresaDTO(
-        null,
-        this.formGroup.controls["cnpj"].value,
-        this.formGroup.controls["nomeFantasia"].value,
-        this.formGroup.controls["razaoSocial"].value,
-        this.formGroup.controls["missao"].value,
-        this.formGroup.controls["visao"].value,
-        this.formGroup.controls["funcionarios"].value,
+      null,
+      this.formGroup.controls["cnpj"].value,
+      this.formGroup.controls["nomeFantasia"].value,
+      this.formGroup.controls["razaoSocial"].value,
+      this.formGroup.controls["missao"].value,
+      this.formGroup.controls["visao"].value,
+      this.formGroup.controls["funcionarios"].value,
     );
 
     this.service.insert(empresa).subscribe(
-        result => {
-            this.route.navigate(['/empresas']);
-        }, err => {
+      result => {
+        this.route.navigate(['/empresas']);
+      }, err => {
 
-        }
+      }
     );
   }
 
