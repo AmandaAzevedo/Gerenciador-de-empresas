@@ -9,7 +9,7 @@ import { FeatureRodapeComponent } from './feature-rodape/feature-rodape.componen
 
 
 @NgModule({
-  declarations: [MainComponent, FeatureComponent],
+  declarations: [MainComponent, FeatureComponent, FeatureRodapeComponent],
   imports: [
     CommonModule,
     MainRoutingModule,
