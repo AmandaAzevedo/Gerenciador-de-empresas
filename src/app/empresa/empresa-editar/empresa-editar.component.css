@@ -5,3 +5,6 @@ button{
   margin-left: 10px;
   margin-top: 40px;
 }
+.mat-form-field {
+  width: 100%;
+}

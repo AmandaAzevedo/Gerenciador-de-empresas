@@ -8,7 +8,7 @@ import { EmpresaListarComponent } from './empresa-listar/empresa-listar.componen
 import { EmpresaMockService } from './service/empresa.mock.service';
 import { EmpresaVerComponent } from './empresa-ver/empresa-ver.component';
 import { NgSelectModule } from '@ng-select/ng-select';
-
+import { MatInputModule } from '@angular/material';
 
 
 @NgModule({
@@ -18,7 +18,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     FormsModule,
     ReactiveFormsModule,
     EmpresaRoutingModule,
-    NgSelectModule
+    NgSelectModule,
+    MatInputModule
   ],
   providers: [
     {
