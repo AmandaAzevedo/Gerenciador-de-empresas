@@ -77,4 +77,8 @@ export class EmpresaEditarComponent implements OnInit {
     this.submitted = false;
     this.route.navigate(['/empresas']);
   }
+
+  hasError(controlName: string, errorName: string) {
+    return this.formGroup.controls[controlName].hasError(errorName) && this.formGroup.controls[controlName].touched;
+  }
 }
