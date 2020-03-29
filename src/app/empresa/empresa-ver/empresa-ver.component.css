@@ -17,6 +17,10 @@ table{
     margin-top: 20px;
 }
 .mat-form-field {
-  width: 100%;
+    width: 100%;
+}
+
+button{
+    margin-right: 10px;
 }
 

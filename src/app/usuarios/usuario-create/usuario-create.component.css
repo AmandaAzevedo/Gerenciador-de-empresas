@@ -1,0 +1,14 @@
+h2{
+    margin-top:25px;
+    margin-bottom: 15px;
+    font-weight:150;
+}
+
+button{
+    margin-left: 10px;
+    margin-top: 40px;
+}
+
+.mat-form-field{
+    width:100%;
+}

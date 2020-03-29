@@ -59,6 +59,9 @@ export class UsuarioEditarComponent implements OnInit {
 
   onReset() {
     this.router.navigate(['/usuarios']);
+  }
 
+  hasError(controlName: string, errorName: string) {
+    return this.formGroup.controls[controlName].hasError(errorName) && this.formGroup.controls[controlName].touched;
   }
 }

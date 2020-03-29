@@ -1,5 +1,5 @@
 <div class="container">
-  <h2 class="text-center">Adicionar nova empresa</h2>
+  <h2 class="text-center">Adicionar Empresa</h2>
   <div class="jumbotron" style="background-color: rgba(1, 158, 175, 0.164);">
   <form class="form" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
     <div class="container">
@@ -73,9 +73,9 @@
     </div>
 
     <div class="text-center">
-      <button class="btn btn-primary mr-1" [disabled]="formGroup.invalid">Adicionar</button>
-      <button *ngIf="!isEditing" class="btn btn-secondary" type="reset" (click)="onReset()">Resetar</button>
-      <button type="button" class="btn btn-danger" [routerLink]="['../list']"> Cancelar </button>
+      <button class="btn btn-outline-primary mr-1" [disabled]="formGroup.invalid">Adicionar</button>
+      <button *ngIf="!isEditing" class="btn btn-outline-secondary" type="reset" (click)="onReset()">Resetar</button>
+      <button type="button" class="btn btn-outline-danger" [routerLink]="['../list']"> Cancelar </button>
     </div>
   </form>
 </div>

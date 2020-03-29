@@ -36,7 +36,7 @@ export class UsuarioCreateComponent implements OnInit {
 
     onSubmit() {
         this.submitted = true;
-        if(this.formGroup.invalid) {
+        if (this.formGroup.invalid) {
             return;
         }
 
@@ -57,6 +57,10 @@ export class UsuarioCreateComponent implements OnInit {
     onReset() {
         this.submitted = false;
         this.formGroup.reset();
+    }
+
+    hasError(controlName: string, errorName: string) {
+        return this.formGroup.controls[controlName].hasError(errorName) && this.formGroup.controls[controlName].touched;
     }
 
 }

@@ -9,6 +9,7 @@ import { UsuarioCreateComponent } from './usuario-create/usuario-create.componen
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsuarioVerComponent } from './usuario-ver/usuario-ver.component';
 import { UsuarioEditarComponent } from './usuario-editar/usuario-editar.component';
+import { MatInputModule, MatTableModule, MatPaginator, MatPaginatorModule } from '@angular/material';
 
 
 
@@ -19,6 +20,9 @@ import { UsuarioEditarComponent } from './usuario-editar/usuario-editar.componen
     UsuariosRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
   ],
   providers: [
       {

@@ -65,10 +65,12 @@
       </div>
     </div>
 
-    <div class="text-center">
-      <button type="button" class="btn btn-danger" [routerLink]="['../list']"> Voltar </button>
-      <button type="button" class="btn btn-outline-primary" [routerLink]="['/empresas/editar', empresa.id]" style="margin-left: 8px;"> <i class="fa fa-edit"></i> Editar </button>
-    </div>
+    <p class="text-center">
+      <button type="button" class="btn btn-outline-info" [routerLink]="['/empresas/']" href="#"> <i
+          class="fa fa-angle-left"></i> Voltar </button>
+      <button type="button" class="btn btn-outline-primary" [routerLink]="['/empresas/editar', empresa.id]" href="#"
+        id="button-editar"> <i class="fa fa-edit"></i> Editar</button>
+    </p>
   </form>
 </div>
 </div>
